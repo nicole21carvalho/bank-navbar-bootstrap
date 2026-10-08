@@ -1,50 +1,116 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página inicial de um banco fictício, com navegação responsiva feita em Bootstrap 5.">
+  <title>Banco Horizonte · Conta digital, cartões e investimentos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Banco do Brasil</h1>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
+  <a class="visually-hidden-focusable pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Barra superior com atalhos de acessibilidade e atendimento -->
+  <div class="barra-superior d-none d-md-block">
+    <div class="container d-flex justify-content-between">
+      <span>Atendimento 24 h: <strong>0800 000 0000</strong></span>
+      <span>Ouvidoria · Segurança · Acessibilidade</span>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top navbar-banco" aria-label="Navegação principal">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <span class="logo" aria-hidden="true">H</span>
+        Banco Horizonte
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu-principal">
+        <ul class="navbar-nav me-auto mb-3 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Para você</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicos">Empresas</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Produtos</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#servicos">💳 Cartões</a></li>
+              <li><a class="dropdown-item" href="#servicos">📈 Investimentos</a></li>
+              <li><a class="dropdown-item" href="#servicos">🏠 Financiamentos</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#servicos">Ver todos os produtos</a></li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#ajuda">Ajuda</a></li>
+        </ul>
+
+        <form class="d-flex mb-3 mb-lg-0 me-lg-3" role="search" onsubmit="return false">
+          <label for="busca" class="visually-hidden">Buscar no site</label>
+          <input class="form-control busca" id="busca" type="search" placeholder="Buscar…">
+        </form>
+        <a class="btn btn-entrar" href="#">Acessar conta</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="conteudo">
+    <section class="hero">
+      <div class="container py-5">
+        <div class="row align-items-center g-5 py-lg-4">
+          <div class="col-lg-6">
+            <span class="selo">Conta digital sem tarifa</span>
+            <h1 class="display-4 fw-bold mt-3 mb-3">Seu dinheiro rendendo desde o primeiro dia</h1>
+            <p class="lead mb-4">Abra sua conta pelo celular em poucos minutos, com cartão sem anuidade e Pix ilimitado.</p>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-amarelo btn-lg px-4" href="#">Abrir minha conta</a>
+              <a class="btn btn-outline-light btn-lg px-4" href="#servicos">Conhecer os produtos</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="cartao-ilustracao" aria-hidden="true">
+              <div class="cartao-credito">
+                <span class="chip"></span>
+                <span class="numero">•••• •••• •••• 2026</span>
+                <span class="titular">NICOLE R. DE CARVALHO</span>
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
-    
+      </div>
+    </section>
+
+    <section id="servicos" class="container py-5">
+      <h2 class="h3 fw-bold mb-1">O que você precisa hoje?</h2>
+      <p class="text-body-secondary mb-4">Produtos para o dia a dia, para investir e para realizar planos.</p>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3">
+        <div class="col"><a class="servico" href="#"><span aria-hidden="true">⚡</span><strong>Pix</strong><small>Transferências na hora, 24 h por dia</small></a></div>
+        <div class="col"><a class="servico" href="#"><span aria-hidden="true">💳</span><strong>Cartões</strong><small>Sem anuidade e com cashback</small></a></div>
+        <div class="col"><a class="servico" href="#"><span aria-hidden="true">📈</span><strong>Investimentos</strong><small>CDB, Tesouro Direto e fundos</small></a></div>
+        <div class="col"><a class="servico" href="#"><span aria-hidden="true">🏠</span><strong>Financiamentos</strong><small>Imóveis e veículos com taxas justas</small></a></div>
+      </div>
+    </section>
+
+    <section id="ajuda" class="ajuda">
+      <div class="container py-5 text-center">
+        <h2 class="h3 fw-bold">Precisa de ajuda?</h2>
+        <p class="mb-4">Nossa equipe atende pelo app, pelo chat e pelo telefone, todos os dias.</p>
+        <a class="btn btn-azul px-4" href="#">Falar com o atendimento</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container py-4 d-flex flex-column flex-md-row justify-content-between gap-2">
+      <span>© 2026 Banco Horizonte · Banco fictício criado para estudo</span>
+      <span>Feito por <a href="https://github.com/nicole21carvalho">Nicole R. de Carvalho</a></span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
